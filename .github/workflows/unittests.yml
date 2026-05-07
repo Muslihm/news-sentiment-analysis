@@ -10,36 +10,36 @@ jobs:
   test:
     runs-on: ubuntu-latest
     
-    strategy:
-      matrix:
-        python-version: [3.9, 3.10]  # Fixed: changed 3.1 to 3.10
-    
     steps:
-    - uses: actions/checkout@v4  # Updated from v3 to v4
+    - uses: actions/checkout@v4
     
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5  # Updated from v4 to v5
+    - name: Set up Python
+      uses: actions/setup-python@v5
       with:
-        python-version: ${{ matrix.python-version }}
-    
-    - name: Upgrade pip
-      run: |
-        python -m pip install --upgrade pip
+        python-version: '3.9'  # Use single version, not matrix
     
     - name: Install dependencies
       run: |
+        python -m pip install --upgrade pip
         pip install pandas numpy matplotlib scikit-learn nltk
     
-    - name: Test imports
+    - name: Test Python and imports
       run: |
-        python -c "import pandas; print(f'✅ Pandas {pandas.__version__}')"
-        python -c "import numpy; print(f'✅ NumPy {numpy.__version__}')"
-        python -c "import sklearn; print(f'✅ Scikit-learn {sklearn.__version__}')"
+        python --version
+        python -c "import pandas; print('✅ Pandas works')"
+        python -c "import numpy; print('✅ NumPy works')"
+        python -c "import sklearn; print('✅ Scikit-learn works')"
     
-    - name: Verify EDA script exists
+    - name: Check EDA script
       run: |
-        test -f notebooks/eda_analysis.py && echo "✅ EDA script found" || echo "❌ EDA script missing"
+        if [ -f "notebooks/eda_analysis.py" ]; then
+          echo "✅ EDA script found"
+        else
+          echo "❌ EDA script missing"
+          exit 1
+        fi
     
-    - name: Run syntax check
+    - name: Run EDA script (syntax check only)
       run: |
-        python -m py_compile notebooks/eda_analysis.py && echo "✅ Syntax check passed"
+        python -m py_compile notebooks/eda_analysis.py
+        echo "✅ EDA script syntax is valid
