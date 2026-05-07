@@ -30,11 +30,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
-
 print("="*50)
 print("CI/CD TEST - EDA ANALYSIS")
 print("="*50)
-
 # Create sample data
 np.random.seed(42)
 headlines = ["Fed raises rates", "Apple beats earnings", "Oil prices surge"]
@@ -56,12 +54,10 @@ print(f"\n2. PUBLISHER ANALYSIS")
 pub_counts = df['publisher'].value_counts()
 for pub, count in pub_counts.items():
     print(f"   {pub}: {count} articles")
-
 # Time series
 print(f"\n3. TIME SERIES")
 df['hour'] = pd.to_datetime(df['date']).dt.hour
 print(f"   Peak hour: {df['hour'].mode()[0]}:00")
-
 # Create visualization
 plt.figure(figsize=(10,4))
 plt.subplot(1,2,1)
