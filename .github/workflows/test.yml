@@ -1,0 +1,15 @@
+name: Simple Test
+
+on:
+  push:
+    branches: [ task-1 ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Python version
+        run: python --version
+      
+      - name: Test message
+        run: echo "CI/CD is working!"
