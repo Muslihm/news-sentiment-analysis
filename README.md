@@ -5,27 +5,45 @@
 - Analyze publisher behavior and coverage characteristics
 - Prepare data for sentiment analysis
 ## Project Structure
-news-sentiment-analysis/n
+news-sentiment-analysis
+
 ├── .vscode/
+
 │   └── settings.json
 
 ├── .github/
+
 │   └── workflows/
+
 │       └── unittests.yml
 ├── .gitignore
+
 ├── requirements.txt
+
 ├── README.md
+
 ├── data/
+
 │   └── raw/
+
 ├── notebooks/
+
 │   ├── __init__.py
+
 │   └── README.md
+
 ├── src/
+
 │   └── __init__.py
+
 ├── tests/
+
 │   └── __init__.py
+
 └── scripts/
+
     ├── __init__.py
+    
     └── README.md
 
 ## Setup Instructions
