@@ -5,15 +5,30 @@
 - Analyze publisher behavior and coverage characteristics
 - Prepare data for sentiment analysis
 ## Project Structure
-news-sentiment-analysis/
-├── .github/workflows/ # CI/CD pipelines
-├── data/ # Dataset storage
-│ └── raw/ # Original data
-├── notebooks/ # Jupyter notebooks for EDA
-├── src/ # Source code
-├── tests/ # Unit tests
-└── scripts/ # Utility scripts
-## 🚀 Quick Start
+news-sentiment-analysis/n
+├── .vscode/
+│   └── settings.json
+
+├── .github/
+│   └── workflows/
+│       └── unittests.yml
+├── .gitignore
+├── requirements.txt
+├── README.md
+├── data/
+│   └── raw/
+├── notebooks/
+│   ├── __init__.py
+│   └── README.md
+├── src/
+│   └── __init__.py
+├── tests/
+│   └── __init__.py
+└── scripts/
+    ├── __init__.py
+    └── README.md
+
+## Setup Instructions
 
 ### 1. Clone the repository
 ```bash
@@ -21,7 +36,7 @@ git clone https://github.com/Muslihm/news-sentiment-analysis.git
 cd news-sentiment-analysis
 2. Create virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/Scripts/activate  # On Windows: venv\Scripts\activate
 3. Install dependencies
 pip install -r requirements.txt
 4. Run EDA notebook
