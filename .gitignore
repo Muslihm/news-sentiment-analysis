@@ -47,3 +47,4 @@ htmlcov/
 
 data/*.csv
 data/raw_analyst_ratings.csv
+data/raw_analyst_ratings.csv
