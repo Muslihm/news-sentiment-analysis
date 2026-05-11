@@ -45,3 +45,5 @@ Thumbs.db
 .coverage
 htmlcov/
 
+data/*.csv
+data/raw_analyst_ratings.csv
