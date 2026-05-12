@@ -104,7 +104,7 @@ def main():
     # Remove rows with invalid dates
     initial_rows = len(df)
     df = df.dropna(subset=['date'])
-    print(f"Removed {initial_rows  len(df)} rows with invalid dates - run_eda_fixed.py:107")
+    print(f"Removed {initial_rows  len(df):,} rows with invalid dates - run_eda_fixed.py:107")
     
     print(f"✓ Loaded {len(df):,} rows - run_eda_fixed.py:109")
     print(f"Date range: {df['date'].min()} to {df['date'].max()} - run_eda_fixed.py:110")
